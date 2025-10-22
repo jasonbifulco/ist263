@@ -1,0 +1,24 @@
+body {font-family: 'Times New Roman', Times, serif;
+background-color: #ffffff;color: #90e0ef}
+text {color:rgb(251, 176, 27);}
+a {color:#caf0f8;}
+h1,h2,h3{color:#00b4d8;}
+nav {background-color:#0077b6;}
+nav {color:#90e0ef;}
+nav a {color:#ee9b00;}
+nav a:hover {color:#8f5201;}
+nav{padding:10px;}
+nav {margin-bottom: 30px;}
+
+footer {
+    background-color:#ffffff;
+    padding: 5px;
+}
+
+.left{
+    float: left;
+}
+
+.right{
+    float: right;
+}
