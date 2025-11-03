@@ -18,12 +18,13 @@
     font-size: 2rem;
     padding: 20px;
     text-align: center;
-    width: 80%;
+    width: 100%;
   }
   /* Default for large screens */
   .message.large {
     background-color: red;
     display: block;
+    content: "im small";
   }
   .message.small {
     display: none;
@@ -36,12 +37,13 @@
     .message.small {
       display: block;
       background-color: blue;
+      content: "im small";
     }
   }
 </style>
 </head>
 <body>
-  <div class="message large">I'm large</div>
-  <div class="message small">I'm small</div>
+  <div class="message large">im small</div>
+  <div class="message small">im small</div>
 </body>
 </html>
