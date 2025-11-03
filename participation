@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Viewport and Media Query Example</title>
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .message {
+    font-size: 2rem;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+  }
+  /* Default for large screens */
+  .message.large {
+    background-color: red;
+    display: block;
+  }
+  .message.small {
+    display: none;
+  }
+  /* When viewport is less than 800px */
+  @media (max-width: 799px) {
+    .message.large {
+      display: none;
+    }
+    .message.small {
+      display: block;
+      background-color: blue;
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="message large">I'm large</div>
+  <div class="message small">I'm small</div>
+</body>
+</html>
