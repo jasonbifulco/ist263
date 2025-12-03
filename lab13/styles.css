@@ -1,0 +1,296 @@
+/* Skip to Content Link - Accessibility */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background-color: #000;
+    color: #fff;
+    padding: 10px 15px;
+    text-decoration: none;
+    z-index: 100;
+    font-size: 1rem;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* Rest of your existing CSS below... */
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #ffffff;
+    color: #90e0ef;
+    margin: 0;
+    padding: 0 20px;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* ... rest of your styles ... */
+/* Base Styles with Font Size */
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #ffffff;
+    color: #90e0ef;
+    margin: 0;
+    padding: 0 20px;
+    font-size: 1rem;  /* Base font size - fully resizable */
+    line-height: 1.6;  /* Improves readability */
+}
+
+text {
+    color: rgb(251, 176, 27);
+}
+
+/* Links */
+a {
+    color: #caf0f8;
+    font-size: 1rem;
+}
+
+/* Headings with Relative Font Sizes */
+h1 {
+    color: #00b4d8;
+    font-size: 2.5rem;  /* 40px equivalent at default size */
+}
+
+h2 {
+    color: #00b4d8;
+    font-size: 2rem;  /* 32px equivalent */
+}
+
+h3 {
+    color: #00b4d8;
+    font-size: 1.5rem;  /* 24px equivalent */
+}
+
+/* Paragraphs */
+p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Navigation */
+nav {
+    background-color: #0077b6;
+    color: #90e0ef;
+    padding: 10px;
+    margin: 0 -20px 30px -20px;
+}
+
+nav a {
+    color: #ee9b00;
+    font-size: 1.1rem;  /* Slightly larger for nav visibility */
+}
+
+nav a:hover {
+    color: #8f5201;
+}
+
+nav span {
+    font-size: 1.1rem;
+}
+
+/* Footer */
+footer {
+    background-color: #ffffff;
+    padding: 5px;
+    font-size: 0.875rem;  /* 14px equivalent - smaller footer text */
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+/* Row 1 Styles */
+.row1 {
+    display: flex;
+    background-color: #f0f0f0;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    gap: 30px;
+}
+
+.row1 .column1 {
+    flex: 1;
+    background-color: #e3f2fd;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.row1 .column2 {
+    flex: 1;
+    background-color: #fff3e0;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Row 2 Styles */
+.row2 {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #f0f0f0;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    gap: 30px;
+}
+
+.row2 .column1 {
+    flex: 1;
+    background-color: #e8f5e9;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.row2 .column2 {
+    flex: 1;
+    background-color: #fce4ec;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Make iframe responsive */
+.row2 .column2 iframe {
+    width: 100%;
+    height: 450px;
+    border-radius: 8px;
+}
+
+/* Form styling */
+form {
+    width: 100%;
+}
+
+form label {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+form input[type="text"],
+form select,
+form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;  /* Match body text size */
+}
+
+form input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 1rem;
+}
+
+form input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Radio buttons and their labels */
+form input[type="radio"] + label {
+    font-size: 1rem;
+}
+
+/* Add spacing to image */
+.row1 .column2 img {
+    margin-top: 10px;
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Row 3 Styles - Flexbox 2 */
+.row3 {
+    display: flex;
+}
+
+.row3 > div:first-child {
+    flex: 3;
+}
+
+.row3 > div:last-child {
+    flex: 1;
+}
+
+.row {
+    justify-content: space-around;
+    font-size: 1rem;
+}
+
+aside {
+    background-color: #e3f2fd;
+    color: #0077b6;
+    padding: 25px;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+aside h2 {
+    font-size: 1.75rem;  /* Slightly smaller h2 in aside */
+}
+
+aside p {
+    font-size: 1rem;
+}
+
+.profile_img {
+    max-width: 100%;
+}
+
+/* Lists */
+ul {
+    font-size: 1rem;
+}
+
+li {
+    font-size: 1rem;
+}
+
+/* Media Query for Tablet and Mobile - Stacking Navigation */
+@media (max-width: 768px) {
+    
+    nav a {
+        display: block;
+        width: 100%;
+        padding: 15px 10px;
+        border-bottom: 1px solid #005f8a;
+        font-size: 1.2rem;  /* Slightly larger on mobile for touch targets */
+    }
+    
+    nav a:last-child {
+        border-bottom: none;
+    }
+    
+    nav span {
+        display: none;
+    }
+    
+    /* Adjust heading sizes for mobile */
+    h1 {
+        font-size: 2rem;  /* Smaller on mobile */
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    h3 {
+        font-size: 1.25rem;
+    }
+}
