@@ -5,8 +5,49 @@
     box-sizing: border-box;
 }
 
+/* Roboto Font Classes */
+.roboto-light {
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}
+
+.roboto-regular {
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}
+
+.roboto-medium {
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}
+
+.roboto-bold {
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}
+
+.roboto-black {
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Roboto", Arial, sans-serif;
     line-height: 1.6;
     background-color: #f8f9fa;
     color: #333;
@@ -23,6 +64,7 @@ header {
 header h1 {
     font-size: 2rem;
     color: #ffffff;
+    font-weight: 700;
 }
 
 /* Navigation Styles */
@@ -57,6 +99,7 @@ nav {
     padding: 1rem 1.5rem;
     display: block;
     transition: background-color 0.3s ease;
+    font-weight: 500;
 }
 
 .nav-links a:hover,
@@ -103,6 +146,7 @@ nav {
     font-size: 2.5rem;
     margin-bottom: 1rem;
     color: #ffffff;
+    font-weight: 700;
 }
 
 .hero p {
@@ -111,6 +155,7 @@ nav {
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
+    font-weight: 400;
 }
 
 /* Features Section with Flexbox */
@@ -141,6 +186,7 @@ nav {
     color: #c41e3a;
     margin-bottom: 1rem;
     font-size: 1.5rem;
+    font-weight: 700;
 }
 
 /* CTA Section */
@@ -154,11 +200,13 @@ nav {
 .cta-section h2 {
     color: #c41e3a;
     margin-bottom: 1rem;
+    font-weight: 700;
 }
 
 .cta-section p {
     margin-bottom: 1.5rem;
     font-size: 1.1rem;
+    font-weight: 400;
 }
 
 /* CTA Buttons */
@@ -176,7 +224,7 @@ nav {
     padding: 1rem 2rem;
     text-decoration: none;
     border-radius: 5px;
-    font-weight: bold;
+    font-weight: 700;
     transition: background-color 0.3s ease;
     display: inline-block;
 }
@@ -204,6 +252,7 @@ footer {
     text-align: center;
     padding: 2rem;
     margin-top: 3rem;
+    font-weight: 400;
 }
 
 /* Media Queries for Responsive Design */
