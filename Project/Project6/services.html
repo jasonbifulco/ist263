@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Parlay Jay Sports Consulting</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional styles specific to services page */
+        .service-item {
+            background-color: #fff;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .service-item h3 {
+            color: #c41e3a;
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+        
+        .service-item p {
+            margin: 0;
+            line-height: 1.6;
+        }
+        
+        .services-intro {
+            background-color: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+        
+        .services-summary {
+            background-color: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Parlay Jay Sports Consulting</h1>
+    </header>
+    
+    <nav>
+        <div class="nav-container">
+            <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                ☰
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html" aria-current="page">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <main class="container">
+        <h2 style="color: #c41e3a; border-bottom: 2px solid #c41e3a; padding-bottom: 0.5rem; margin-bottom: 1.5rem;">Services</h2>
+        
+        <div class="services-intro">
+            <p>At Parlay Jay Sports Consulting, I offer a range of services tailored to meet different experience levels and betting goals:</p>
+        </div>
+        
+        <div class="service-item">
+            <h3>Daily Picks & Insights</h3>
+            <p>Receive carefully researched daily picks backed by statistical analysis and industry trends.</p>
+        </div>
+        
+        <div class="service-item">
+            <h3>Multiple Subscription Plans</h3>
+            <p>Choose between daily, weekly, monthly, and full season subscription plans that include picks every day.</p>
+        </div>
+        
+        <div class="service-item">
+            <h3>One-on-One Consulting</h3>
+            <p>Book a private session where I'll review your betting habits, help manage risk, and develop a personalized approach.</p>
+        </div>
+        
+        <div class="service-item">
+            <h3>Beginner Resources</h3>
+            <p>New to betting? I provide easy-to-understand guides to help you start safely and responsibly.</p>
+        </div>
+        
+        <div class="services-summary">
+            <p>Sports covered include football, basketball, baseball, and more depending on the season. Every recommendation is based on data analysis, recent performance, and value betting principles – never just "gut feelings."</p>
+            
+            <p style="margin-top: 1rem;"><strong>Choose the plan that best fits your goals and let's build a smarter approach together.</strong></p>
+        </div>
+        
+        <div style="text-align: center; margin-top: 2rem;">
+            <a href="contact.html" class="cta">Get Started</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Parlay Jay Sports Consulting. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+            const isExpanded = navLinks.classList.contains('active');
+            menuToggle.setAttribute('aria-expanded', isExpanded);
+        });
+
+        document.addEventListener('click', function(event) {
+            const isClickInside = event.target.closest('nav');
+            if (!isClickInside && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                menuToggle.setAttribute('aria-expanded', 'false');
+            }
+        });
+    </script>
+</body>
+</html>
