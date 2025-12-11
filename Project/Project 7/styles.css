@@ -126,6 +126,7 @@ nav {
 
 .nav-links li {
     margin: 0;
+    position: relative;
 }
 
 .nav-links a {
@@ -146,6 +147,74 @@ nav {
 .nav-links a[aria-current="page"] {
     background-color: var(--color-primary);
     border-bottom: 3px solid var(--color-white);
+}
+
+/* ADVANCED FEATURE: Dropdown Navigation Styles */
+/* Self-taught using CSS positioning and hover states */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-arrow {
+    font-size: 0.7rem;
+    margin-left: 0.3rem;
+    transition: transform var(--transition-speed) ease;
+}
+
+.dropdown.active .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu {
+    display: none; /* Hidden by default - CRITICAL */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--color-dark);
+    min-width: 220px;
+    box-shadow: var(--shadow-lg);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    z-index: 1000;
+    border-top: 3px solid var(--color-primary);
+}
+
+/* Only show when dropdown has active class */
+.dropdown.active .dropdown-menu {
+    display: block;
+    animation: fadeInDown 0.3s ease;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dropdown-menu li {
+    width: 100%;
+    border-bottom: 1px solid #333;
+}
+
+.dropdown-menu li:last-child {
+    border-bottom: none;
+}
+
+.dropdown-menu a {
+    padding: 0.75rem 1.5rem;
+    white-space: nowrap;
+}
+
+.dropdown-menu a:hover,
+.dropdown-menu a:focus {
+    background-color: var(--color-primary);
+    padding-left: 2rem;
 }
 
 /* Mobile Menu Toggle */
@@ -505,6 +574,24 @@ footer {
 
     .nav-links a {
         padding: 1rem;
+    }
+
+    /* Dropdown adjustments for mobile */
+    .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        border-top: none;
+        background-color: #2a2a2a;
+    }
+
+    .dropdown-menu a {
+        padding-left: 2rem;
+        font-size: 0.9rem;
+    }
+
+    .dropdown-menu a:hover,
+    .dropdown-menu a:focus {
+        padding-left: 2.5rem;
     }
 
     .hero h2 {
