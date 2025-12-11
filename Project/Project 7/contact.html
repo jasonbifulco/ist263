@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Parlay Jay Sports Consulting for betting insights and personalized consulting. Reach out via email, Instagram, or our contact form.">
+    <title>Contact - Parlay Jay Sports Consulting</title>
+    
+    <!-- Preconnect for Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <header>
+        <h1>Parlay Jay Sports Consulting</h1>
+    </header>
+    
+    <nav aria-label="Main navigation">
+        <div class="nav-container">
+            <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span aria-hidden="true">☰</span>
+                <span class="visually-hidden">Menu</span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html" aria-current="page">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <main id="main-content" class="container">
+        <h2 class="page-title">Contact</h2>
+        
+        <section class="contact-intro" aria-labelledby="intro-heading">
+            <h3 id="intro-heading" class="visually-hidden">Get In Touch</h3>
+            <p>Let's connect! I'd love to hear from you. Whether you have questions about services, want to learn more before signing up, or are ready to start, this is the best place to reach me.</p>
+        </section>
+        
+        <section class="contact-info" aria-labelledby="contact-info-heading">
+            <h3 id="contact-info-heading" class="visually-hidden">Contact Information</h3>
+            <p><strong>Email:</strong> <a href="mailto:Jdbifulc@syr.edu">Jdbifulc@syr.edu</a></p>
+            <p><strong>Instagram:</strong> <a href="https://instagram.com/ParlayJay" target="_blank" rel="noopener noreferrer">@ParlayJay<span class="visually-hidden"> (opens in new tab)</span></a></p>
+        </section>
+        
+        <section class="contact-form" aria-labelledby="form-heading">
+            <h3 id="form-heading">Contact Form</h3>
+            <form action="https://formspree.io/f/xeoyplyy" method="POST">
+                <div class="form-group">
+                    <label for="name">Name <span aria-label="required">*</span></label>
+                    <input type="text" id="name" name="name" required aria-required="true">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email <span aria-label="required">*</span></label>
+                    <input type="email" id="email" name="email" required aria-required="true">
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message <span aria-label="required">*</span></label>
+                    <textarea id="message" name="message" required aria-required="true"></textarea>
+                </div>
+                
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+        
+        <section class="contact-closing">
+            <p><strong>Your success in sports betting starts with the right information. Reach out today, and let's work together to make your bets smarter.</strong></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="copyright-year">2024</span> Parlay Jay Sports Consulting. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Hamburger menu functionality
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+            const isExpanded = navLinks.classList.contains('active');
+            menuToggle.setAttribute('aria-expanded', isExpanded);
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const isClickInside = event.target.closest('nav');
+            if (!isClickInside && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                menuToggle.setAttribute('aria-expanded', 'false');
+            }
+        });
+
+        // Dynamic copyright year
+        document.getElementById('copyright-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore Parlay Jay Sports Consulting services including daily picks, subscription plans, one-on-one consulting, and beginner resources for sports betting.">
+    <title>Services - Parlay Jay Sports Consulting</title>
+    
+    <!-- Preconnect for Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <header>
+        <h1>Parlay Jay Sports Consulting</h1>
+    </header>
+    
+    <nav aria-label="Main navigation">
+        <div class="nav-container">
+            <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span aria-hidden="true">☰</span>
+                <span class="visually-hidden">Menu</span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html" aria-current="page">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <main id="main-content" class="container">
+        <h2 class="page-title">Services</h2>
+        
+        <section class="services-intro" aria-labelledby="intro-heading">
+            <h3 id="intro-heading" class="visually-hidden">Introduction</h3>
+            <p>At Parlay Jay Sports Consulting, I offer a range of services tailored to meet different experience levels and betting goals:</p>
+        </section>
+        
+        <section class="services-list" aria-labelledby="services-heading">
+            <h3 id="services-heading" class="visually-hidden">Available Services</h3>
+            
+            <article class="service-item">
+                <h3>Daily Picks &amp; Insights</h3>
+                <p>Receive carefully researched daily picks backed by statistical analysis and industry trends.</p>
+            </article>
+            
+            <article class="service-item">
+                <h3>Multiple Subscription Plans</h3>
+                <p>Choose between daily, weekly, monthly, and full season subscription plans that include picks every day.</p>
+            </article>
+            
+            <article class="service-item">
+                <h3>One-on-One Consulting</h3>
+                <p>Book a private session where I'll review your betting habits, help manage risk, and develop a personalized approach.</p>
+            </article>
+            
+            <article class="service-item">
+                <h3>Beginner Resources</h3>
+                <p>New to betting? I provide easy-to-understand guides to help you start safely and responsibly.</p>
+            </article>
+        </section>
+        
+        <section class="services-summary" aria-labelledby="summary-heading">
+            <h3 id="summary-heading" class="visually-hidden">Sports Coverage and Methodology</h3>
+            <p>Sports covered include football, basketball, baseball, and more depending on the season. Every recommendation is based on data analysis, recent performance, and value betting principles – never just "gut feelings."</p>
+            
+            <p class="services-closing"><strong>Choose the plan that best fits your goals and let's build a smarter approach together.</strong></p>
+        </section>
+        
+        <div class="cta-center">
+            <a href="contact.html" class="cta">Get Started</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="copyright-year">2024</span> Parlay Jay Sports Consulting. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Hamburger menu functionality
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+            const isExpanded = navLinks.classList.contains('active');
+            menuToggle.setAttribute('aria-expanded', isExpanded);
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const isClickInside = event.target.closest('nav');
+            if (!isClickInside && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                menuToggle.setAttribute('aria-expanded', 'false');
+            }
+        });
+
+        // Dynamic copyright year
+        document.getElementById('copyright-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
