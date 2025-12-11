@@ -1,75 +1,110 @@
-/* Reset and Base Styles */
+/* ==========================================
+   CSS VARIABLES
+   ========================================== */
+:root {
+    --color-primary: #c41e3a;
+    --color-primary-gradient: #e63946;
+    --color-secondary: #0066cc;
+    --color-secondary-dark: #0052a3;
+    --color-accent: #1e3a8a;
+    --color-accent-dark: #152c6b;
+    --color-dark: #1a1a1a;
+    --color-light: #f8f9fa;
+    --color-white: #ffffff;
+    --color-text: #333;
+    --color-border: #ddd;
+    
+    --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
+    --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+    --shadow-lg: 0 4px 8px rgba(0,0,0,0.15);
+    
+    --transition-speed: 0.3s;
+}
+
+/* ==========================================
+   RESET AND BASE STYLES
+   ========================================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Roboto Font Classes */
-.roboto-light {
-    font-family: "Roboto", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 300;
-    font-style: normal;
-    font-variation-settings: "wdth" 100;
-}
-
-.roboto-regular {
-    font-family: "Roboto", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-    font-variation-settings: "wdth" 100;
-}
-
-.roboto-medium {
-    font-family: "Roboto", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 500;
-    font-style: normal;
-    font-variation-settings: "wdth" 100;
-}
-
-.roboto-bold {
-    font-family: "Roboto", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 700;
-    font-style: normal;
-    font-variation-settings: "wdth" 100;
-}
-
-.roboto-black {
-    font-family: "Roboto", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 900;
-    font-style: normal;
-    font-variation-settings: "wdth" 100;
-}
-
 body {
     font-family: "Roboto", Arial, sans-serif;
     line-height: 1.6;
-    background-color: #f8f9fa;
-    color: #333;
+    background-color: var(--color-light);
+    color: var(--color-text);
 }
 
-/* Header Styles */
+/* Apply Roboto to all form elements */
+input,
+textarea,
+button,
+select {
+    font-family: "Roboto", Arial, sans-serif;
+}
+
+/* ==========================================
+   ACCESSIBILITY UTILITIES
+   ========================================== */
+/* Skip to main content link */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #000;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    z-index: 100;
+    border-radius: 0 0 4px 0;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* Visually hidden but accessible to screen readers */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Focus styles for keyboard navigation */
+*:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+}
+
+/* ==========================================
+   HEADER STYLES
+   ========================================== */
 header {
-    background-color: #c41e3a;
+    background-color: var(--color-primary);
     padding: 1.5rem 0;
     text-align: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: var(--shadow-sm);
 }
 
 header h1 {
     font-size: 2rem;
-    color: #ffffff;
+    color: var(--color-white);
     font-weight: 700;
 }
 
-/* Navigation Styles */
+/* ==========================================
+   NAVIGATION STYLES
+   ========================================== */
 nav {
-    background-color: #1a1a1a;
+    background-color: var(--color-dark);
     position: relative;
 }
 
@@ -91,22 +126,95 @@ nav {
 
 .nav-links li {
     margin: 0;
+    position: relative;
 }
 
 .nav-links a {
-    color: #fff;
+    color: var(--color-white);
     text-decoration: none;
     padding: 1rem 1.5rem;
     display: block;
-    transition: background-color 0.3s ease;
+    transition: background-color var(--transition-speed) ease;
     font-weight: 500;
 }
 
 .nav-links a:hover,
 .nav-links a:focus {
-    background-color: #c41e3a;
-    outline: 2px solid #1e3a8a;
-    outline-offset: -2px;
+    background-color: var(--color-primary);
+}
+
+/* Current page indicator */
+.nav-links a[aria-current="page"] {
+    background-color: var(--color-primary);
+    border-bottom: 3px solid var(--color-white);
+}
+
+/* ADVANCED FEATURE: Dropdown Navigation Styles */
+/* Self-taught using CSS positioning and hover states */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-arrow {
+    font-size: 0.7rem;
+    margin-left: 0.3rem;
+    transition: transform var(--transition-speed) ease;
+}
+
+.dropdown.active .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu {
+    display: none; /* Hidden by default - CRITICAL */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--color-dark);
+    min-width: 220px;
+    box-shadow: var(--shadow-lg);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    z-index: 1000;
+    border-top: 3px solid var(--color-primary);
+}
+
+/* Only show when dropdown has active class */
+.dropdown.active .dropdown-menu {
+    display: block;
+    animation: fadeInDown 0.3s ease;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dropdown-menu li {
+    width: 100%;
+    border-bottom: 1px solid #333;
+}
+
+.dropdown-menu li:last-child {
+    border-bottom: none;
+}
+
+.dropdown-menu a {
+    padding: 0.75rem 1.5rem;
+    white-space: nowrap;
+}
+
+.dropdown-menu a:hover,
+.dropdown-menu a:focus {
+    background-color: var(--color-primary);
+    padding-left: 2rem;
 }
 
 /* Mobile Menu Toggle */
@@ -114,38 +222,49 @@ nav {
     display: none;
     background: none;
     border: none;
-    color: #fff;
+    color: var(--color-white);
     font-size: 1.5rem;
     cursor: pointer;
     padding: 1rem;
 }
 
-.menu-toggle:focus {
-    outline: 2px solid #1e3a8a;
-}
-
-/* Main Container */
+/* ==========================================
+   MAIN CONTAINER
+   ========================================== */
 .container {
     max-width: 1200px;
     margin: 2rem auto;
     padding: 0 1rem;
 }
 
-/* Hero Section */
+/* ==========================================
+   PAGE TITLE (used on Services and Contact)
+   ========================================== */
+.page-title {
+    color: var(--color-primary);
+    border-bottom: 2px solid var(--color-primary);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+/* ==========================================
+   HERO SECTION
+   ========================================== */
 .hero {
-    background: linear-gradient(135deg, #c41e3a 0%, #e63946 100%);
-    color: #fff;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-gradient) 100%);
+    color: var(--color-white);
     padding: 3rem 2rem;
     border-radius: 8px;
     text-align: center;
     margin-bottom: 2rem;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: var(--shadow-md);
 }
 
 .hero h2 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    color: #ffffff;
+    color: var(--color-white);
     font-weight: 700;
 }
 
@@ -158,7 +277,9 @@ nav {
     font-weight: 400;
 }
 
-/* Features Section with Flexbox */
+/* ==========================================
+   FEATURES SECTION
+   ========================================== */
 .features {
     display: flex;
     gap: 2rem;
@@ -169,36 +290,40 @@ nav {
 .feature-card {
     flex: 1;
     min-width: 250px;
-    background-color: #fff;
+    background-color: var(--color-white);
     padding: 2rem;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: var(--shadow-sm);
     text-align: center;
-    transition: transform 0.3s ease;
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
 }
 
-.feature-card:hover {
+.feature-card:hover,
+.feature-card:focus-within {
     transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    box-shadow: var(--shadow-lg);
 }
 
 .feature-card h3 {
-    color: #c41e3a;
+    color: var(--color-primary);
     margin-bottom: 1rem;
     font-size: 1.5rem;
     font-weight: 700;
 }
 
-/* CTA Section */
+/* ==========================================
+   CTA SECTION
+   ========================================== */
 .cta-section {
     text-align: center;
-    background-color: #fff;
+    background-color: var(--color-white);
     padding: 2rem;
     border-radius: 8px;
+    box-shadow: var(--shadow-sm);
 }
 
 .cta-section h2 {
-    color: #c41e3a;
+    color: var(--color-primary);
     margin-bottom: 1rem;
     font-weight: 700;
 }
@@ -219,43 +344,205 @@ nav {
 }
 
 .cta {
-    background-color: #0066cc;
-    color: #fff;
+    background-color: var(--color-secondary);
+    color: var(--color-white);
     padding: 1rem 2rem;
     text-decoration: none;
     border-radius: 5px;
     font-weight: 700;
-    transition: background-color 0.3s ease;
+    transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease;
     display: inline-block;
 }
 
 .cta:hover,
 .cta:focus {
-    background-color: #0052a3;
-    outline: 2px solid #1e3a8a;
+    background-color: var(--color-secondary-dark);
+    transform: translateY(-2px);
 }
 
 .cta-secondary {
-    background-color: #1e3a8a;
-    color: #fff;
+    background-color: var(--color-accent);
 }
 
 .cta-secondary:hover,
 .cta-secondary:focus {
-    background-color: #152c6b;
+    background-color: var(--color-accent-dark);
 }
 
-/* Footer */
+/* Center CTA (used on services page) */
+.cta-center {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+/* ==========================================
+   SERVICES PAGE STYLES
+   ========================================== */
+.services-intro,
+.services-summary {
+    background-color: var(--color-white);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.services-list {
+    margin-bottom: 2rem;
+}
+
+.service-item {
+    background-color: var(--color-white);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+.service-item:hover,
+.service-item:focus-within {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+.service-item h3 {
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.service-item p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+.services-closing {
+    margin-top: 1rem;
+}
+
+/* ==========================================
+   CONTACT PAGE STYLES
+   ========================================== */
+.contact-intro,
+.contact-info,
+.contact-closing {
+    background-color: var(--color-white);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.contact-info p {
+    margin: 0.5rem 0;
+}
+
+.contact-info a {
+    color: var(--color-secondary);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.contact-info a:hover,
+.contact-info a:focus {
+    text-decoration: underline;
+}
+
+.contact-closing {
+    text-align: center;
+}
+
+/* ==========================================
+   FORM STYLES
+   ========================================== */
+.contact-form {
+    background-color: var(--color-white);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 2rem;
+}
+
+.contact-form h3 {
+    color: var(--color-primary);
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color var(--transition-speed) ease;
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form textarea:focus {
+    border-color: var(--color-accent);
+    outline: 2px solid var(--color-accent);
+    outline-offset: 0;
+}
+
+form textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+form button[type="submit"] {
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease;
+}
+
+form button[type="submit"]:hover {
+    background-color: var(--color-secondary-dark);
+    transform: translateY(-2px);
+}
+
+form button[type="submit"]:focus {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+}
+
+/* ==========================================
+   FOOTER
+   ========================================== */
 footer {
-    background-color: #1a1a1a;
-    color: #fff;
+    background-color: var(--color-dark);
+    color: var(--color-white);
     text-align: center;
     padding: 2rem;
     margin-top: 3rem;
     font-weight: 400;
 }
 
-/* Media Queries for Responsive Design */
+/* ==========================================
+   MEDIA QUERIES - RESPONSIVE DESIGN
+   ========================================== */
 @media screen and (max-width: 768px) {
     header h1 {
         font-size: 1.5rem;
@@ -272,7 +559,7 @@ footer {
         position: absolute;
         top: 100%;
         left: 0;
-        background-color: #1a1a1a;
+        background-color: var(--color-dark);
     }
 
     .nav-links.active {
@@ -287,6 +574,24 @@ footer {
 
     .nav-links a {
         padding: 1rem;
+    }
+
+    /* Dropdown adjustments for mobile */
+    .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        border-top: none;
+        background-color: #2a2a2a;
+    }
+
+    .dropdown-menu a {
+        padding-left: 2rem;
+        font-size: 0.9rem;
+    }
+
+    .dropdown-menu a:hover,
+    .dropdown-menu a:focus {
+        padding-left: 2.5rem;
     }
 
     .hero h2 {
@@ -316,8 +621,12 @@ footer {
 }
 
 @media screen and (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+    
     header h1 {
-        font-size: 1.21rem;
+        font-size: 1.25rem;
     }
 
     .hero {
@@ -330,5 +639,44 @@ footer {
 
     .feature-card {
         padding: 1.5rem;
+    }
+    
+    .contact-form,
+    .service-item {
+        padding: 1rem;
+    }
+}
+
+/* ==========================================
+   REDUCED MOTION SUPPORT
+   ========================================== */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ==========================================
+   PRINT STYLES
+   ========================================== */
+@media print {
+    nav,
+    footer,
+    .cta-section,
+    .menu-toggle {
+        display: none;
+    }
+    
+    body {
+        background: white;
+        color: black;
+    }
+    
+    .hero {
+        background: white;
+        color: black;
+        border: 2px solid black;
     }
 }

@@ -1,164 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Parlay Jay Sports Consulting for betting insights and personalized consulting. Reach out via email, Instagram, or our contact form.">
     <title>Contact - Parlay Jay Sports Consulting</title>
+    
+    <!-- Preconnect for Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    
+    <!-- Stylesheet -->
     <link rel="stylesheet" href="styles.css">
-    <style>
-        /* Additional styles specific to contact page */
-        .contact-intro {
-            background-color: #fff;
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin-bottom: 2rem;
-        }
-        
-        .contact-info {
-            background-color: #fff;
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin: 2rem 0;
-        }
-        
-        .contact-info p {
-            margin: 0.5rem 0;
-        }
-        
-        .contact-info a {
-            color: #0066cc;
-            text-decoration: none;
-        }
-        
-        .contact-info a:hover {
-            text-decoration: underline;
-        }
-        
-        .contact-form {
-            background-color: #fff;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        
-        .contact-form h3 {
-            color: #c41e3a;
-            margin-bottom: 1.5rem;
-        }
-        
-        form label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: bold;
-            color: #333;
-        }
-        
-        form input[type="text"],
-        form input[type="email"],
-        form textarea {
-            width: 100%;
-            padding: 0.75rem;
-            margin-bottom: 1.5rem;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-        
-        form textarea {
-            resize: vertical;
-            min-height: 150px;
-        }
-        
-        form button[type="submit"] {
-            background-color: #0066cc;
-            color: #fff;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1rem;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-        }
-        
-        form button[type="submit"]:hover {
-            background-color: #0052a3;
-        }
-        
-        form button[type="submit"]:focus {
-            outline: 2px solid #1e3a8a;
-        }
-        
-        .contact-closing {
-            background-color: #fff;
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin-top: 2rem;
-            text-align: center;
-        }
-    </style>
 </head>
 <body>
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
     <header>
         <h1>Parlay Jay Sports Consulting</h1>
     </header>
     
-    <nav>
+    <nav aria-label="Main navigation">
         <div class="nav-container">
             <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-                ☰
+                <span aria-hidden="true">☰</span>
+                <span class="visually-hidden">Menu</span>
             </button>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="services.html">Services</a></li>
+                <li class="dropdown">
+                    <a href="services.html" aria-haspopup="true" aria-expanded="false">
+                        Services <span class="dropdown-arrow">▼</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="services.html#daily-picks">Daily Picks</a></li>
+                        <li><a href="services.html#subscription">Subscription Plans</a></li>
+                        <li><a href="services.html#consulting">One-on-One Consulting</a></li>
+                        <li><a href="services.html#beginner">Beginner Resources</a></li>
+                    </ul>
+                </li>
                 <li><a href="contact.html" aria-current="page">Contact</a></li>
             </ul>
         </div>
     </nav>
     
-    <main class="container">
-        <h2 style="color: #c41e3a; border-bottom: 2px solid #c41e3a; padding-bottom: 0.5rem; margin-bottom: 1.5rem;">Contact</h2>
+    <main id="main-content" class="container">
+        <h2 class="page-title">Contact</h2>
         
-        <div class="contact-intro">
+        <section class="contact-intro" aria-labelledby="intro-heading">
+            <h3 id="intro-heading" class="visually-hidden">Get In Touch</h3>
             <p>Let's connect! I'd love to hear from you. Whether you have questions about services, want to learn more before signing up, or are ready to start, this is the best place to reach me.</p>
-        </div>
+        </section>
         
-        <div class="contact-info">
+        <section class="contact-info" aria-labelledby="contact-info-heading">
+            <h3 id="contact-info-heading" class="visually-hidden">Contact Information</h3>
             <p><strong>Email:</strong> <a href="mailto:Jdbifulc@syr.edu">Jdbifulc@syr.edu</a></p>
-            <p><strong>Instagram:</strong> <a href="https://instagram.com/ParlayJay" target="_blank" rel="noopener noreferrer">@ParlayJay</a></p>
-        </div>
+            <p><strong>Instagram:</strong> <a href="https://instagram.com/ParlayJay" target="_blank" rel="noopener noreferrer">@ParlayJay<span class="visually-hidden"> (opens in new tab)</span></a></p>
+        </section>
         
-        <div class="contact-form">
-            <h3>Contact Form</h3>
-            <form action="#" method="POST">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" required>
+        <section class="contact-form" aria-labelledby="form-heading">
+            <h3 id="form-heading">Contact Form</h3>
+            <form action="https://formspree.io/f/xeoyplyy" method="POST">
+                <div class="form-group">
+                    <label for="name">Name <span aria-label="required">*</span></label>
+                    <input type="text" id="name" name="name" required aria-required="true">
+                </div>
                 
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
+                <div class="form-group">
+                    <label for="email">Email <span aria-label="required">*</span></label>
+                    <input type="email" id="email" name="email" required aria-required="true">
+                </div>
                 
-                <label for="message">Message</label>
-                <textarea id="message" name="message" required></textarea>
+                <div class="form-group">
+                    <label for="message">Message <span aria-label="required">*</span></label>
+                    <textarea id="message" name="message" required aria-required="true"></textarea>
+                </div>
                 
                 <button type="submit">Submit</button>
             </form>
-        </div>
+        </section>
         
-        <div class="contact-closing">
+        <section class="contact-closing">
             <p><strong>Your success in sports betting starts with the right information. Reach out today, and let's work together to make your bets smarter.</strong></p>
-        </div>
+        </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 Parlay Jay Sports Consulting. All rights reserved.</p>
+        <p>&copy; <span id="copyright-year">2024</span> Parlay Jay Sports Consulting. All rights reserved.</p>
     </footer>
 
     <script>
+        // Hamburger menu functionality
         const menuToggle = document.querySelector('.menu-toggle');
         const navLinks = document.querySelector('.nav-links');
 
@@ -168,6 +105,7 @@
             menuToggle.setAttribute('aria-expanded', isExpanded);
         });
 
+        // Close menu when clicking outside
         document.addEventListener('click', function(event) {
             const isClickInside = event.target.closest('nav');
             if (!isClickInside && navLinks.classList.contains('active')) {
@@ -175,6 +113,53 @@
                 menuToggle.setAttribute('aria-expanded', 'false');
             }
         });
+
+        // ADVANCED FEATURE: Dropdown Navigation with Accessibility
+        const dropdown = document.querySelector('.dropdown');
+        const dropdownLink = dropdown.querySelector('a[aria-haspopup]');
+        const dropdownMenu = dropdown.querySelector('.dropdown-menu');
+
+        // Toggle dropdown on click only (not hover)
+        dropdownLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation(); // Prevent click from bubbling to document
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+            this.setAttribute('aria-expanded', !isExpanded);
+            dropdown.classList.toggle('active');
+        });
+
+        // Keyboard navigation for dropdown
+        dropdownLink.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                this.setAttribute('aria-expanded', !isExpanded);
+                dropdown.classList.toggle('active');
+                if (!isExpanded) {
+                    dropdownMenu.querySelector('a').focus();
+                }
+            }
+        });
+
+        // Close dropdown when pressing Escape
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && dropdown.classList.contains('active')) {
+                dropdown.classList.remove('active');
+                dropdownLink.setAttribute('aria-expanded', 'false');
+                dropdownLink.focus();
+            }
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!dropdown.contains(event.target)) {
+                dropdown.classList.remove('active');
+                dropdownLink.setAttribute('aria-expanded', 'false');
+            }
+        });
+
+        // Dynamic copyright year
+        document.getElementById('copyright-year').textContent = new Date().getFullYear();
     </script>
 </body>
 </html>
