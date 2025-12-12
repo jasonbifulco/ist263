@@ -259,6 +259,14 @@ nav {
     text-align: center;
     margin-bottom: 2rem;
     box-shadow: var(--shadow-md);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+}
+
+.hero-content {
+    max-width: 800px;
 }
 
 .hero h2 {
@@ -271,10 +279,22 @@ nav {
 .hero p {
     font-size: 1.1rem;
     margin-bottom: 1.5rem;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
     font-weight: 400;
+}
+
+.hero-image {
+    max-width: 800px;
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
 }
 
 /* ==========================================
@@ -642,6 +662,10 @@ footer {
 
     .hero h2 {
         font-size: 1.5rem;
+    }
+    
+    .hero-image {
+        max-width: 100%;
     }
 
     .feature-card {
