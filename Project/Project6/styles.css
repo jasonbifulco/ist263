@@ -486,10 +486,11 @@ nav {
     height: 200px;
     border-radius: 50%;
     object-fit: cover;
-    object-position: center 55%; /* More aggressive shift down */
+    object-position: center 50%;
     border: 5px solid var(--color-primary);
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     margin-bottom: 1rem;
+    transform: scale(1.05); /* Zoom in 5% to cover white sliver */
 }
 
 .profile-name {
