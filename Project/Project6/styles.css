@@ -254,16 +254,11 @@ nav {
 .hero {
     background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-gradient) 100%);
     color: var(--color-white);
-    padding: 3rem 2rem 2rem 2rem;
+    padding: 3rem 2rem;
     border-radius: 8px;
     text-align: center;
     margin-bottom: 2rem;
     box-shadow: var(--shadow-md);
-}
-
-.hero-content {
-    max-width: 800px;
-    margin: 0 auto 2rem auto;
 }
 
 .hero h2 {
@@ -276,25 +271,10 @@ nav {
 .hero p {
     font-size: 1.1rem;
     margin-bottom: 0;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
     font-weight: 400;
-}
-
-.hero-image {
-    max-width: 700px;
-    width: 100%;
-    margin: 0 auto;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
-    border: 3px solid rgba(255,255,255,0.2);
-}
-
-.hero-image img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
-    max-height: 400px;
 }
 
 /* ==========================================
@@ -329,6 +309,13 @@ nav {
     margin-bottom: 1rem;
     font-size: 1.5rem;
     font-weight: 700;
+}
+
+.feature-icon-large {
+    font-size: 3rem;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+    display: block;
 }
 
 /* ==========================================
