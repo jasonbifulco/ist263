@@ -249,7 +249,7 @@ nav {
 }
 
 /* ==========================================
-   HERO SECTION - UPDATED WITH IMAGE SUPPORT
+   HERO SECTION - WITH STADIUM IMAGE SUPPORT
    ========================================== */
 .hero {
     position: relative;
@@ -486,6 +486,7 @@ nav {
     height: 200px;
     border-radius: 50%;
     object-fit: cover;
+    object-position: center 55%; /* More aggressive shift down */
     border: 5px solid var(--color-primary);
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     margin-bottom: 1rem;
