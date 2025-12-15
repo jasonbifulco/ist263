@@ -252,9 +252,12 @@ nav {
    HERO SECTION
    ========================================== */
 .hero {
-    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-gradient) 100%);
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), 
+                url('stadium.png');
+    background-size: cover;
+    background-position: center;
     color: var(--color-white);
-    padding: 3rem 2rem;
+    padding: 5rem 2rem;
     border-radius: 8px;
     text-align: center;
     margin-bottom: 2rem;
@@ -266,6 +269,7 @@ nav {
     margin-bottom: 1rem;
     color: var(--color-white);
     font-weight: 700;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9);
 }
 
 .hero p {
@@ -275,6 +279,7 @@ nav {
     margin-left: auto;
     margin-right: auto;
     font-weight: 400;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.9);
 }
 
 /* ==========================================
@@ -368,12 +373,12 @@ nav {
 }
 
 .cta-secondary {
-    background-color: var(--color-accent);
+    background-color: var(--color-secondary);
 }
 
 .cta-secondary:hover,
 .cta-secondary:focus {
-    background-color: var(--color-accent-dark);
+    background-color: var(--color-secondary-dark);
 }
 
 /* Center CTA (used on services page) */
